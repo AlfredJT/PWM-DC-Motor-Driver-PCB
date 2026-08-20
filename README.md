@@ -6,7 +6,7 @@ A high-side MOSFET driver board that switches high-current DC motors from a low-
 
 ## How It Works
 
-Driving a MOSFET gate directly from an MCU's PWM pin works fine at low currents, but it doesn't scale well once you need to switch a real motor load — the MCU can't always source enough gate current, and you often want the motor running on a completely separate, higher-voltage rail from the logic. This board solves that with a small gate-drive stage:
+Driving a MOSFET gate directly from an MCU's PWM pin works fine at low currents, but it doesn't scale well once you need to switch a real motor load and you often want the motor running on a completely separate, higher-voltage rail from the logic. This board solves that with a small gate-drive stage:
 
 - The **IRF540N's gate** is pulled up to the power rail through a **1kΩ resistor**.
 - A **2N2222A transistor** sits between the gate and ground, acting as the switch that controls the MOSFET.
@@ -28,11 +28,10 @@ The result is that a low-voltage logic signal fully controls a MOSFET switching 
 
 <img width="801" height="560" alt="KFK-180 motors" src="https://github.com/user-attachments/assets/3e0542ac-674e-4353-b6cd-ca0409495376" />
 
-A DC motor's spin direction is determined purely by the polarity of current through its windings. That means two KFK-180 motors can be wired with **opposite lead polarity** and driven off the **same PWM signal**, while spinning in opposite directions — no extra control logic required.
-
+A DC motor's spin direction is determined purely by the polarity of current through its windings. That means two KFK-180 motors can be wired with opposite lead polarity and driven off the same PWM signal while spinning in opposite directions.
 ## Designing the Fan & Enclosure
 
-Designed a fan impeller in **Fusion 360**, sized specifically for the KFK-180 motor's shaft and output characteristics, and 3D printed it.
+Designed a fan impeller in Fusion 360, sized specifically for the KFK-180 motor's shaft and 3D printed it.
 
 <img width="1137" height="512" alt="Fusion 360 fan design" src="https://github.com/user-attachments/assets/0cc7fbc5-3640-4b0e-8b3c-5a3c2b34ed17" />
 
@@ -42,4 +41,4 @@ Designed a fan impeller in **Fusion 360**, sized specifically for the KFK-180 mo
 
 <img width="579" height="431" alt="Final enclosure cooling application" src="https://github.com/user-attachments/assets/6d25474c-d951-4a5e-928a-396cd834f8ca" />
 
-This driver module is used to configure a cooling system for a custom enclosure. By wiring the two fans with opposite polarity off the same PWM signal, one fan spins clockwise and the other counterclockwise at identical speed — one serving as **intake** and the other as **exhaust**, creating directional airflow through the enclosure without needing independent control channels.
+This driver module is used to configure a cooling system for a custom enclosure. By wiring the two fans with opposite polarity off the same PWM signal, one fan spins clockwise and the other counterclockwise at identical speed allowing one one to serve as intake and the other as exhaust. Thereby creating directional airflow through the enclosure without needing independent control channels.
