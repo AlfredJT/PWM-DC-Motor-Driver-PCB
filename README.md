@@ -1,6 +1,6 @@
 # PWM DC Motor Driver PCB
 
-A high-side MOSFET driver board that switches high-current DC motors from a low-voltage microcontroller PWM signal, using a separate gate-drive supply instead of driving the MOSFET gate directly off logic level.
+A high side MOSFET driver board that switches high current DC motors from a low voltage microcontroller PWM signal, using a separate gate-drive supply instead of driving the MOSFET gate directly off logic level.
 
 <img width="962" height="738" alt="Motor driver board" src="https://github.com/user-attachments/assets/75395502-0a53-4655-ba12-bd343cb60826" />
 
